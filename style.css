@@ -1,28 +1,125 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-screen canvas */
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e; /* Dark background for better contrast */
+}
+
+canvas {
+  display: block; /* Remove extra space below canvas */
+}
+
+/* UI Container */
 #ui {
   position: absolute;
   top: 10px;
-  left: 10px;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 12px;
-  border-radius: 6px;
-  box-shadow: 0 0 10px #000;
-}
-
-#ui > div {
-  margin-bottom: 5px;
-}
-
-#startBtn {
-  padding: 8px 16px;
-  font-size: 16px;
-  background-color: #28a745;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
+  font-size: 18px;
+  text-align: center;
+  z-index: 10;
+  font-family: 'Verdana', sans-serif;
+}
+
+/* Best Time & Current Time display */
+#ui div {
+  margin: 10px;
+  padding: 8px;
+  font-size: 22px;
+}
+
+#ui span {
+  font-weight: bold;
+  color: #ffd700; /* Golden color for the times */
+}
+
+/* Play button styles */
+#startBtn {
+  background-color: #4caf50; /* Green background for Play button */
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  width: 200px;
+  margin-top: 20px;
 }
 
 #startBtn:hover {
-  background-color: #218838;
+  background-color: #45a049;
+}
+
+#startBtn:active {
+  transform: scale(0.95); /* Slight press effect */
+}
+
+#startBtn:disabled {
+  background-color: #c8c8c8;
+  cursor: not-allowed;
+}
+
+/* Smooth transition for UI */
+#ui div,
+#startBtn {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+#ui div:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+#ui div:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+#startBtn {
+  animation-delay: 0.7s;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #ui {
+    top: 20px;
+    font-size: 16px;
+  }
+
+  #startBtn {
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 400px) {
+  #ui {
+    font-size: 14px;
+  }
+
+  #startBtn {
+    font-size: 14px;
+    padding: 8px 16px;
+    width: 160px;
+  }
 }
