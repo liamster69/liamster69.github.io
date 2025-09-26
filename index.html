@@ -1,5 +1,30 @@
-<div id="ui">
-  <div>Best Time: <span id="bestTime">—</span></div>
-  <div>Current Time: <span id="currTime">0.000</span></div>
-  <button id="startBtn">▶️ Play</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3D Racing Game</title>
+  
+  <!-- Linking the external style.css -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Including THREE.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+</head>
+<body>
+
+  <!-- UI Container -->
+  <div id="ui">
+    <div>Best Time: <span id="bestTime">—</span></div>
+    <div>Current Time: <span id="currTime">0.000</span></div>
+    <button id="startBtn">▶️ Play</button>
+  </div>
+
+  <!-- Your 3D canvas is rendered inside this body, no need for additional divs -->
+  
+  <script src="script.js"></script>
+</body>
+</html>
+
